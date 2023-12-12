@@ -1,0 +1,5 @@
+task_management/__init__.py
+task_management/__pycache__/__init__.cpython-310.pyc
+task_management/__pycache__/settings.cpython-310.pyc
+taskapp/__init__.py
+taskapp/migrations/__init__.py
