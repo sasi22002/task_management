@@ -8,3 +8,5 @@ Log/*
 task_management/__pycache__/*
 *.pyc
 taskapp/migrations/*
+task_management/development.py
+task_management/production.py

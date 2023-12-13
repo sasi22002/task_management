@@ -1,0 +1,86 @@
+/* static/css/styles.css */
+
+.task-list {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .task-ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .task-item {
+    margin-bottom: 10px;
+    padding: 10px;
+    /* border: 1px solid #ccc; */
+    background-color: #fff2e8;
+    transition: background-color 0.3s ease;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .task-item .task-due-date{
+    color: #000;
+  }
+  
+  
+  
+  .completed {
+    /* text-decoration: line-through; */
+    color: #fff;
+    background-color: #73d690;
+  }
+
+  .completed .task-due-date{
+    color: #fff;
+  }
+  
+  .task-title {
+    font-weight: bold;
+
+  }
+  
+  .task-due-date {
+    color: #fff;
+  }
+  
+
+  .headcls{
+    background: lightgreen;
+    text-align: center;
+
+}
+
+.col-md-4{
+    text-align: center;
+    /* margin-top: 200px; */
+}
+
+.mx-5{
+    font-size: 30px;
+}
+
+label{
+    display: block;
+    width: 100px;
+
+}
+.task-form{
+    width: 50%;
+    margin: auto;
+}
+.task-form label{
+    width: 150px;
+}
+
+/* static/css/styles.css */
+
+/* Add your custom styles here */
+
+
+.custom-input{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}

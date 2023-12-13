@@ -1,0 +1,26 @@
+<!-- task_list.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class="task-list">
+    <h1>Task List</h1>
+    <ul class="task-ul">
+      {% for task in tasks %}
+        <li class="task-item{% if task.completed %} completed{% endif %}">
+          <div>
+            <span class="task-title">{{ task.title }}</span>
+            <span class="task-due-date">Due: {{ task.dueDate }}</span>
+          </div>
+          <div>
+            <span>{% if task.completed %} Completed {% else %}Incomplete {% endif %}
+            </span>
+          </div>
+          
+          
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+{% endblock %}
+
+
