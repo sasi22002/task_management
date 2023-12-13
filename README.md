@@ -14,7 +14,7 @@ After doing this, confirm that you have installed virtualenv globally as well. I
 
 Then, Git clone this repo to your PC
 
-    $ git clone - git clone **url
+    $ git clone - git clone https://github.com/sasi22002/task_management.git
     $ cd task_management
     
 ### Create a virtual environment
