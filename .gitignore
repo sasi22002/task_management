@@ -4,3 +4,7 @@ task_management/__pycache__/settings.cpython-310.pyc
 taskapp/__init__.py
 taskapp/migrations/__init__.py
 .env
+Log/*
+task_management/__pycache__/*
+*.pyc
+taskapp/migrations/*
