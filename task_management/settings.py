@@ -88,6 +88,7 @@ INSTALLED_APPS = [
     'taskapp',
     'django_user_agents',
     'corsheaders',
+    'drf_yasg',
 
     ]
 

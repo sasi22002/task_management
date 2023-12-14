@@ -15,6 +15,7 @@ from rest_framework.views import APIView
 from rest_framework import permissions
 from django.contrib.auth import authenticate
 from .utils import *
+from utils.swagger import *
 
 
 
@@ -22,7 +23,7 @@ def task_list(request):
     """
     FUNCTION FOR DISPLAY ALL TASK DETAILS
     """
-    tasks = Task.objects.all()
+    tasks = Task.objects.all().order_by('-id')
     return render(request, 'tasks/task_list.html', {'tasks': tasks})
 
 
@@ -52,9 +53,9 @@ def add_task(request):
     return render(request, 'tasks/add_task.html', {'form': form})
 
 
+@add_numbers_swagger
 @api_view(['POST'])
 @permission_classes([AllowAny])
-@csrf_exempt
 def sum_of_even_numbers(request):
     """
     Calculate the sum of all even numbers in the given list.
@@ -79,7 +80,11 @@ def sum_of_even_numbers(request):
     
     
 class ManageTask(APIView):
-    permission_classes = [permissions.IsAuthenticated]
+    
+    """
+    Django REST Framework API endpoint for manage tasks
+    """
+    permission_classes = [permissions.IsAuthenticated]  #ADDED AUTHENTICATION FOR BELOW VIEWS
     
     def get(self,request):
         #LIST ALL TASK DETAILS FOR PARTICULAR USER
@@ -92,7 +97,8 @@ class ManageTask(APIView):
             logging.info(e)
             res = {'status':False,'message':"Server Error",'data':[]}
             return JsonResponse(res,status=status.HTTP_400_BAD_REQUEST)
-        
+    
+    @add_task_swagger
     def post(self,request):
         #API FOR CREATE A NEW TASKS
         try:
@@ -129,7 +135,8 @@ class ManageTask(APIView):
             logging.info(e)
             res = {'status':False,'message':"Server Error",'data':[]}
             return JsonResponse(res,status=status.HTTP_400_BAD_REQUEST)
-        
+    
+    @update_task_swagger
     def put(self,request):
         #API FOR UPDATE THE EXISTING TASK
         try:
@@ -170,6 +177,7 @@ class ManageTask(APIView):
             res = {'status':False,'message':"Server Error",'data':[]}
             return JsonResponse(res,status=status.HTTP_400_BAD_REQUEST)
         
+    @delete_task_swagger
     def delete(self,request):
         #API FOR DETELE THE TASK
         try:
@@ -191,10 +199,10 @@ class ManageTask(APIView):
             return JsonResponse(res,status=status.HTTP_400_BAD_REQUEST)
         
 
-    
 class Login(APIView):
     permission_classes = [permissions.AllowAny]
     
+    @login_swagger
     def post(self,request):
         try:
             email= request.data['email']          

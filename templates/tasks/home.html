@@ -9,13 +9,14 @@
 
     
 
-      <div class="col-md-4">
-        <h2>Quick Actions</h2>
+        <div class="col-md-4">
+            <li><a href="{% url 'add_task' %}" class="btn btn-primary btn-block mb-3">Add New Task</a></li>
+            <li><a href="{% url 'task_list' %}" class="btn btn-primary btn-block mb-3">List Task</a>
+            </li>
+            
+        </div>
         
-        <li><a href="{% url 'add_task' %}" class="btn btn-primary btn-block mb-3">Add New Task</a></li>
-        <li><a href="{% url 'task_list' %}" class="btn btn-primary btn-block mb-3">List Task</a>
-        </li>
-        <!-- Add more quick actions as needed -->
-      </div>
+        
+      
     </div>
 {% endblock %}

@@ -108,7 +108,9 @@ SERVER_URL="http://127.0.0.1:8000/"
 ### Launching the app
     $ python manage.py runserver
 
-    $ click http://127.0.0.1:8000 & change the link to http://127.0.0.1:8000/tasks/ in browser
+    $ Click http://127.0.0.1:8000 & change the link to http://127.0.0.1:8000/tasks/ in browser
+
+    $ I have added swagger documentation for this project http://127.0.0.1:8000/swagger/ in browser
 
 
 
